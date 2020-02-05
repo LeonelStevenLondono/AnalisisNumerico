@@ -1,11 +1,18 @@
+#-------------------
+#autores:
+#Andres Gil 
+#Erika Gonzalez 
+#Leonel Londono
+#Analisis numerico
 
+#------------------
 
 taylor = function(f, punto, a, n)
   {
     val = parse(text=f)
-    # convertir en función
+
     fx = function(x){eval(val[[1]])}
-    # almacenar los sumandos
+
     summe = rep(NA, lenvalth=n+1)
     for(k in 1:n)
     {

@@ -1,3 +1,13 @@
+
+#-------------------
+#autores:
+#Andres Gil 
+#Erika Gonzalez 
+#Leonel Londono
+#Analisis numerico
+
+#------------------
+
 errorTruncamiento = function(maxDigitos, numero){
   contador = 0
   aux = numero
