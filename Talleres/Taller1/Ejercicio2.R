@@ -1,10 +1,10 @@
 #-------------------
-  #autores:
-  #Andres Gil 
-  #Erika Gonzalez 
-  #Leonel Londono
-  #Analisis numerico
-                  
+#autores:
+#Andres Gil 
+#Erika Gonzalez 
+#Leonel Londono
+#Analisis numerico
+
 #------------------
 raizCuadrada <- function(n, e, x){
   eActual <- c()
@@ -13,7 +13,7 @@ raizCuadrada <- function(n, e, x){
   y <- (1/2)*(x+(n/x))
   b <- abs(x-y)
   while(b > e)
-    {
+  {
     x <- y
     y <- (1/2)*(x+(n/x))
     eAnterior <- c(eAnterior, b)
@@ -22,8 +22,11 @@ raizCuadrada <- function(n, e, x){
   }
   points(eActual, eAnterior, col = "red")
   lines(eActual, eAnterior, col = "blue")
+  tabla = data.frame(cbind(eActual,eAnterior) )
+  show(tabla)
   return(cat("El valor final es : ", y, " con error de ", e))
-}
+  
+  }
 f = function(x) (x)
 plot(f, xlim=c(0,60), ylim=c(0,60), col = "white", xlab="Error actual",ylab="Error anterior ", main= "Error actual vs Error anterior")
 abline(h=0,col="black")
