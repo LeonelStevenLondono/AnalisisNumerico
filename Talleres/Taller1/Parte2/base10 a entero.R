@@ -1,4 +1,13 @@
 
+
+#-------------------
+#autores:
+#Andres Gil 
+#Erika Gonzalez 
+#Leonel Londono
+#Analisis numerico
+
+#------------------
 parseInt = function(aux)
 {
   total=0

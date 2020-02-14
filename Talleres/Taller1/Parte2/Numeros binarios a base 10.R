@@ -1,4 +1,12 @@
 
+#-------------------
+#autores:
+#Andres Gil 
+#Erika Gonzalez 
+#Leonel Londono
+#Analisis numerico
+
+#------------------
 parseToInt = function(number)
 {
   dato = 0
