@@ -18,9 +18,10 @@ sumaNaturales <- function(b)
     {
       suma = suma + d^2
     }
+    cat(suma, "\n")
     vecto = c(vecto,suma)
   }
-  plot(b,vecto,xlab="n",ylab="suma de cuadradados")
+  plot(b,vecto,xlab="n",ylab="Suma de cuadradados",main = " n numeros vs Suma de cuadrados ")
   lines(b, vecto, col = "blue")
   
   
