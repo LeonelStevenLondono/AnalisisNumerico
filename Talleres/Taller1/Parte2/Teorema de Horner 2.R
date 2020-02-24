@@ -20,6 +20,5 @@ horner <- function(coef, x)
       }
   return(cat("Resultado: ", valorf, "\n con un numero minimo de operaciones de: ", itera,"\n con: ",itera/2," multiplicaciones y ",itera/2, " sumas"))
 }
-xi <- -2
 coef <- c(2,0,-3,3,-4)
 horner(coef,xi)
