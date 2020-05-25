@@ -60,6 +60,9 @@ for(i in length(baseDeDatos$countriesAndTerritories):1)
 
 poblacionSusceptibleActual <- individuosMaximos - poblacionInfectadaActual - poblacionRecuperadaFallecidaActual
 
+individuosMaximos <- individuosMaximos / 400
+individuosMaximos <- round(individuosMaximos)
+
 cat("Maximos ", individuosMaximos, 
     "Infectados: ", poblacionInfectadaActual,
     "Fallecidos: ", poblacionRecuperadaFallecidaActual, 
@@ -148,6 +151,7 @@ obtenerResultadosSIS <-function(input, metodo, nombreGrafica)
   par(new=TRUE)
   plot(solucionEDO$time,solucionEDO$I*individuosMaximos,col="red", type="l", xlab="Dias de simulacion", ylab="Numero de Individuos", ylim = c(0,input$poblacionInicialSIS), main = nombreGrafica)
   par(new=T)
+  
   legend(x = "topright", legend=c("Susceptibles", "Infectados"), col=c("blue", "red"), lty=rep(1, 1))
   
   solucionEDO$time <- NULL 
@@ -259,38 +263,38 @@ contenidoSIS <- fluidRow(
   tabBox(
     title = "Comportamiento del virus a traves del tiempo con Runge Kutta",
     width =8,
-    id = "contenedorGraficaModeloSISRungeKutta", height = "300px",
+    id = "contenedorGraficaModeloSISRungeKutta", height = "500px",
     tabPanel(
       title = "Grafica modelo",
       width=200,
-      plotOutput("graficaModeloSISRungeKutta", height = 200)
+      plotOutput("graficaModeloSISRungeKutta", height = 400)
     ),
     tabPanel(
       title = "Grafica error",
       width=200,
-      plotOutput("graficaErrorSISRungeKutta", height = 200)
+      plotOutput("graficaErrorSISRungeKutta", height = 400)
     )
   ),
   tabBox(
     title = "Comportamiento del virus a traves del tiempo con Euler",
     width =8,
-    id = "contenedorGraficaModeloSIS", height = "300px",
+    id = "contenedorGraficaModeloSIS", height = "500px",
     tabPanel(
       title = "Grafica modelo",
       width=200,
-      plotOutput("graficaModeloSISEuler", height = 200)
+      plotOutput("graficaModeloSISEuler", height = 400)
     ),
     tabPanel(
       title = "Grafica error",
       width=200,
-      plotOutput("graficaErrorSISEuler", height = 200)
+      plotOutput("graficaErrorSISEuler", height = 400)
     )
   ),
   box(
     title = "Campo de pendientes del modelo SIS",
     width = 8,
-    id = "contenedorPendientesModeloSIS", height = "300px",
-    plotOutput("graficaPendientesSIS", height = 200)
+    id = "contenedorPendientesModeloSIS", height = "500px",
+    plotOutput("graficaPendientesSIS", height = 400)
   )
 )
 
@@ -316,38 +320,38 @@ contenidoSIR <- fluidRow(
   tabBox(
     title = "Comportamiento del virus a traves del tiempo con Runge Kutta",
     width =8,
-    id = "contenedorGraficaModeloSIRRungeKutta", height = "300px",
+    id = "contenedorGraficaModeloSIRRungeKutta", height = "500px",
     tabPanel(
       title = "Grafica modelo",
       width=200,
-      plotOutput("graficaModeloSIRRungeKutta", height = 200)
+      plotOutput("graficaModeloSIRRungeKutta", height = 400)
     ),
     tabPanel(
       title = "Grafica error",
       width=200,
-      plotOutput("graficaErrorSIRRungeKutta", height = 200)
+      plotOutput("graficaErrorSIRRungeKutta", height = 400)
     )
   ),
   tabBox(
     title = "Comportamiento del virus a traves del tiempo con Euler",
     width =8,
-    id = "contenedorGraficaModeloSIR", height = "300px",
+    id = "contenedorGraficaModeloSIR", height = "500px",
     tabPanel(
       title = "Grafica modelo",
       width=200,
-      plotOutput("graficaModeloSIREuler", height = 200)
+      plotOutput("graficaModeloSIREuler", height = 400)
     ),
     tabPanel(
       title = "Grafica error",
       width=200,
-      plotOutput("graficaErrorSIREuler", height = 200)
+      plotOutput("graficaErrorSIREuler", height = 400)
     )
   ),
   box(
     title = "Campo de pendientes del modelo SIR",
     width = 8,
-    id = "contenedorPendientesModeloSIR", height = "300px",
-    plotOutput("graficaPendientesSIR", height = 200)
+    id = "contenedorPendientesModeloSIR", height = "500px",
+    plotOutput("graficaPendientesSIR", height = 400)
   )
   
 )
